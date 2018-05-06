@@ -36,4 +36,25 @@ class Querie
     {
         unset($this->db);
     }
+
+    public  function insertMethod($sql)
+
+    {
+
+        if (strlen($sql) >0 || !empty($sql)) {
+
+
+
+            $result = $this->db->prepare($sql);
+
+            $result->execute();
+
+
+
+        }
+
+    }
+
+
+
 }

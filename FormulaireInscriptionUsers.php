@@ -13,7 +13,7 @@ define("PATHCONF", "./conf/");
 
 
 
-$test = new Formulaire(PATHCONF, "inscription");
+$essai = new Formularusers(PATHCONF, "inscription");
 
 
-echo $test->frmGenerate("form.php");
+echo $essai->frmGenerate("formu.php");

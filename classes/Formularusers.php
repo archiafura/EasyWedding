@@ -6,7 +6,7 @@
  * Time: 16:18
  */
 
-class Formulaire
+class Formularusers
 {
     public $path;
     public $file;
@@ -87,15 +87,22 @@ class Formulaire
 
             else {
 
-                
+
 
                 $nom = $_POST['nom'];
                 $prenom = $_POST['prenom'];
                 $mail = $_POST['mail'];
                 $mdp = hash('sha256', $_POST['mdp']);
+                $datenaissance = $_POST['date_de_naissance'];
+                $genre = $_POST['genre'];
+                $adresse = $_POST['adresse'];
+                $codepostal = $_POST['code_postal'];
+                $ville = $_POST['ville'];
 
-                $sql = "INSERT INTO t_admin (ADMNAME,ADMFIRSTNAME,ADMMAIL,ADMPASSWORD)
-												VALUES('$nom','$prenom', '$mail','$mdp')";
+
+
+                $sql = "INSERT INTO t_users (USENAME,USEFIRSTNAME,USEMAIL,USEPASSWORD,USEBIRTHDATE,USEGENDER,USEADRESS,USEPC,USECITY)
+												VALUES('$nom','$prenom', '$mail','$mdp','$datenaissance', '$genre', '$adresse', '$codepostal', '$ville')";
 
 
                 $requete = new Querie();
@@ -118,30 +125,6 @@ class Formulaire
 }
 
 
-
-
-
-
-
-
-/*
- echo "<pre>";
- $toto = end($conf)['name'];
- echo $toto;
- echo "</pre>";
-*/
-/*
-        $name = $_POST['$content[\'name\']'];
-
-        if($content['type'] == "text" && (filter_var($name, $content['pattern'])) === false) {
-            $errors['name'] = 'Veuillez entrer que des lettres';
-            echo $errors['name'];
-        }
-
-        if($content['type'] == "text" && $content['name'] == "mail"  && (filter_var($email, FILTER_VALIDATE_EMAIL)) === false) {
-        $errors['name'] = 'Veuillez entrer un mail valide';
-        echo $errors['name'];
-*/
 
 
 
